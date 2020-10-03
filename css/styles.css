@@ -45,3 +45,19 @@ body {
   padding: 10px;
   margin: 0 20px 0 20px;
 }
+#validation-input {
+  display: block;
+  border: 3px solid #bdbdbd;
+  font-size: 30px;
+  margin-top: 20px;
+  padding: 5px;
+  /* background-color: burlywood; */
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
