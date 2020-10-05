@@ -3,9 +3,9 @@ const inputEl = document.querySelector('#validation-input');
 // console.log(inputEl.classList);
 let inputLength = 0;
 
-inputEl.addEventListener('input', inputValue);
+inputEl.addEventListener('input', onInputValue);
 
-inputEl.addEventListener('blur', lossFocusInput);
+inputEl.addEventListener('blur', onLossFocusInput);
 
 // inputEl.addEventListener('focus', inFocusInput);
 
@@ -15,17 +15,17 @@ inputEl.addEventListener('blur', lossFocusInput);
 //   inputEl.classList.remove('invalid');
 // }
 
-function inputValue(set) {
+function onInputValue(set) {
   inputLength = set.currentTarget.value.length;
-  inputEl.classList.remove('valid');
-  inputEl.classList.remove('invalid');
 }
 
-function lossFocusInput() {
+function onLossFocusInput() {
   if (inputLength === Number(inputEl.dataset.length)) {
     inputEl.classList.add('valid');
+    inputEl.classList.remove('invalid');
   } else {
     inputEl.classList.add('invalid');
+    inputEl.classList.remove('valid');
   }
 
   //   console.log(inputLength);
