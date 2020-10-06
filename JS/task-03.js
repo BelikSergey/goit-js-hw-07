@@ -20,7 +20,8 @@ const images = [
 const imagesColectionEl = document.querySelector('#gallery');
 
 const imagesColection = images.map(
-  img => `<img class="image-items" src="${img.url}" alt="${img.alt}"/>`,
+  img =>
+    `<li><img class="image-items" src="${img.url}" alt="${img.alt}"/></li>`,
 );
 
-imagesColectionEl.insertAdjacentHTML('beforeend', imagesColection);
+imagesColectionEl.insertAdjacentHTML('beforeend', imagesColection.join(' '));
