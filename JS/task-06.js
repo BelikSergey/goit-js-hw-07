@@ -3,9 +3,21 @@ const inputEl = document.querySelector('#validation-input');
 // console.log(inputEl.classList);
 // let inputLength = 0;
 
-inputEl.addEventListener('input', onInputValue);
+// inputEl.addEventListener('input', onInputValue);
 
 inputEl.addEventListener('blur', onLossFocusInput);
+
+function onLossFocusInput() {
+  if (inputEl.value.length === Number(inputEl.dataset.length)) {
+    inputEl.classList.add('valid');
+    inputEl.classList.remove('invalid');
+  } else {
+    inputEl.classList.add('invalid');
+    inputEl.classList.remove('valid');
+  }
+}
+
+// остальное ниже это как я уве усложнил.
 
 // inputEl.addEventListener('focus', inFocusInput);
 
@@ -15,10 +27,10 @@ inputEl.addEventListener('blur', onLossFocusInput);
 //   inputEl.classList.remove('invalid');
 // }
 
-function onInputValue() {
-  // set.currentTarget.value.length;
-  // console.log(inputEl.value.length);
-}
+// function onInputValue() {
+//   // set.currentTarget.value.length;
+//   // console.log(inputEl.value.length);
+// }
 
 // function onLossFocusInput() {
 //   if (inputLength === Number(inputEl.dataset.length)) {
@@ -36,13 +48,3 @@ function onInputValue() {
 // }
 // if (inputEl.value.length === Number(inputEl.dataset.length))
 // console.log(inputEl.classList);
-
-function onLossFocusInput() {
-  if (inputEl.value.length === Number(inputEl.dataset.length)) {
-    inputEl.classList.add('valid');
-    inputEl.classList.remove('invalid');
-  } else {
-    inputEl.classList.add('invalid');
-    inputEl.classList.remove('valid');
-  }
-}
